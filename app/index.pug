@@ -1,0 +1,32 @@
+extends ./_layout.pug
+block append title
+  title BMI Calculator
+
+block append content
+  .container
+    .header
+      .wrapper
+        .logo
+          img(src="./assets/images/BMICLogo.svg", alt="BMI Calculator")
+        .inputBox
+          span  身高 cm
+          input#height(type="text", placeholder="請輸入身高")
+          span  體重 kg
+          input#weight(type="text", placeholder="請輸入體重")
+        .btnBox
+          button#btn-calculator 看結果
+          #result
+            .res-num
+            .res-msg
+            button#btn-result
+              i.material-icons autorenew
+          
+    .record
+      .wrapper
+        h2 BMI 紀錄
+        ul.listBox
+        button#deletBtn
+          i.material-icons cancel
+          | 刪除所有紀錄
+    .footer
+      img(src="./assets/images/BMICLogo_d.svg", alt="BMI Calculator")
