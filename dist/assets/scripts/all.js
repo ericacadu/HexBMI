@@ -120,26 +120,16 @@ function calculate() {
 	BMI.textContent = bmi
 	result.style.display = 'block'
 	calcBtn.style.display = 'none'
-	return {
+	let newData = {
+		tag: tag,
+		txt: resMsg.textContent,
 		bmi: bmi,
 		weight: weight.value,
 		height: height.value,
-		msg: resMsg.textContent,
-		tag: tag,
-	}
-}
-
-function saveLS() {
-	let data = {
-		tag: calculate().tag,
-		txt: calculate().msg,
-		bmi: calculate().bmi,
-		weight: calculate().weight,
-		height: calculate().height,
 		date: nowDate().date,
 		time: nowDate().time,
 	}
-	save.push(data)
+	save.push(newData)
 
 	let toString = JSON.stringify(save)
 	localStorage.setItem('record', toString)
@@ -186,7 +176,6 @@ function blurCheck(data) {
 function checkFun() {
 	if (blurCheck(inputs).chk) {
 		calculate()
-		saveLS()
 	} else {
 		alert('請輸入您的' + blurCheck(inputs).msg)
 		inputs.forEach(function (item) {

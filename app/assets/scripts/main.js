@@ -93,28 +93,17 @@ function calculate() {
 	BMI.textContent = bmi
 	result.style.display = 'block'
 	calcBtn.style.display = 'none'
-	return {
+
+	let newData = {
+		tag: tag,
+		txt: resMsg.textContent,
 		bmi: bmi,
 		weight: weight.value,
 		height: height.value,
-		msg: resMsg.textContent,
-		tag: tag
-	}
-}
-
-// ----- 儲存 LocalStorage ----- //
-function saveLS() {
-	let data = {
-		tag: calculate().tag,
-		txt: calculate().msg,
-		bmi: calculate().bmi,
-		weight: calculate().weight,
-		height: calculate().height,
 		date: nowDate().date,
 		time: nowDate().time
 	}
-	save.push(data)
-
+	save.push(newData)
 	// 新增資料按照建立時間排序
 	// save.sort(function (a, b) {
 	// 	return new Date(b.time) - new Date(a.time)
@@ -125,7 +114,6 @@ function saveLS() {
 	localStorage.setItem('record', toString)
 	update(save)
 }
-
 
 // ----- 抓取時間 ----- //
 function nowDate(value) {
@@ -138,7 +126,7 @@ function nowDate(value) {
 	return { date: value, time: time }
 }
 
-// ----- 檢查 input 內容是否正確 ----- //
+// ----- 驗證內容 ----- //
 function blurCheck(data) {
 	const txt = [' 身高', ' 體重']
 	let str = ''
@@ -160,7 +148,6 @@ function blurCheck(data) {
 function checkFun() {
 	if ( blurCheck(inputs).chk ) {
 		calculate()
-		saveLS()
 	} else {
 		alert('請輸入您的' + blurCheck(inputs).msg)
 		inputs.forEach(function (item) {
@@ -202,7 +189,6 @@ function keyCtrl(e) {
 	if (e.keyCode === 13) {
 		let isCalced = calcBtn.style.display === 'block'
 		let isChecked = blurCheck(inputs).chk
-
 		if ( entKey === 1 && !isCalced ) {
 			renewFun()
 			entKey = 0
