@@ -3,7 +3,7 @@
 
 標示文件：[https://hexschool.github.io/JavaScript_HomeWork/](https://hexschool.github.io/JavaScript_HomeWork/)
 <br>
-成品Demo：[https://ericacadu.github.io/ericacadu/HexBMI/](https://ericacadu.github.io/ericacadu/HexBMI/)
+成品Demo：[https://ericacadu.github.io/HexBMI/](https://ericacadu.github.io/HexBMI/)
 
 基本功能需求：
 * 計算 BMI
