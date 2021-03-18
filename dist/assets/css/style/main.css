@@ -240,7 +240,7 @@ body {
         background: #FF982D;
         -webkit-box-shadow: 1px 0 5px rgba(255, 152, 45, 0.5);
                 box-shadow: 1px 0 5px rgba(255, 152, 45, 0.5); }
-      .listBox .list-msg .tag.heavy {
+      .listBox .list-msg .tag.heavy, .listBox .list-msg .tag.fat {
         background: #FF6C03;
         -webkit-box-shadow: 1px 0 5px rgba(255, 108, 3, 0.5);
                 box-shadow: 1px 0 5px rgba(255, 108, 3, 0.5); }
